@@ -51,8 +51,8 @@ namespace MyPerpus.Repositories.BookRepo
             try
             {
                 return await _context.Books.Where(u =>
-                    u.Title.ToLower().Contains(keyword.ToLower()) ||
-                    u.ISBN.ToLower().Contains(keyword.ToLower())
+                    u.Judul.ToLower().Contains(keyword.ToLower()) ||
+                    u.Penulis.ToLower().Contains(keyword.ToLower())
                     ).ToListAsync();
             }
             catch

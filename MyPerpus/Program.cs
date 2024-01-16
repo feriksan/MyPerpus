@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using MyPerpus.Repositories.UserRepo;
+using MyPerpus.Views;
 
 namespace MyPerpus
 {
@@ -17,7 +18,7 @@ namespace MyPerpus
             ServiceProvider = new ServiceCollection()
                 .AddScoped<IUserRepo, DbUserRepo>()
                 .BuildServiceProvider() ;
-            Application.Run(new Form1());
+            Application.Run(new FormHome());
         }
 
         //variable service provider

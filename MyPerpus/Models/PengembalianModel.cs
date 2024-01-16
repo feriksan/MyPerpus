@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MyPerpus.Models
 {
     [Table("Pengembalian")]
-    internal class PengembalanModel
+    internal class PengembalianModel
     {
         [Column("KodePinjam")]
         public string ID {  get; set; }

@@ -5,16 +5,16 @@ namespace MyPerpus.Models
     [Table("Books")]
     internal class BookModel
     {
-        [Column("book_id")]
+        [Column("KodeBuku")]
         public Guid ID { get; set; }
-        [Column("title")]
-        public string Title { get; set; } = string.Empty;
-        [Column("author_id")]
-        public int AuthorID { get; set; }
-        [Column("publication_year")]
-        public int PublicationYear { get; set; }
-        [Column("isbn")]
-        public string ISBN { get; set; } = string.Empty;
+        [Column("Judul")]
+        public string Judul { get; set; } = string.Empty;
+        [Column("Penulis")]
+        public string Penulis { get; set; } = string.Empty;
+        [Column("Penerbit")]
+        public string Penerbit { get; set; } = string.Empty;
+        [Column("Tahun")]
+        public int Tahun { get; set; }
 
     }
 }
