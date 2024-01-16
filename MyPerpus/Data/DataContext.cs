@@ -14,6 +14,7 @@ namespace MyPerpus.Data
         public DbSet<BookModel> Books => Set<BookModel>();
         public DbSet<BorrowModel> Borrows => Set<BorrowModel>();
         public DbSet<AuthorModel> Authors => Set<AuthorModel>();
+        public DbSet<RakModel> Raks => Set<RakModel>();
     }
 
 }

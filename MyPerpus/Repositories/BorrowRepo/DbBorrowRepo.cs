@@ -7,18 +7,18 @@ using Microsoft.EntityFrameworkCore;
 using MyPerpus.Data;
 using MyPerpus.Models;
 
-namespace MyPerpus.Repositories.AuthorRepo
+namespace MyPerpus.Repositories.BorrowRepo
 {
-    internal class DbAuthorRepo : IAuthorRepo
+    internal class DbBorrowRepo : IBorrowRepo
     {
         private readonly DataContext _context;
 
-        public DbAuthorRepo() { _context = new DataContext(); }
-        public async Task Add(AuthorModel newData)
+        public DbBorrowRepo() { _context = new DataContext(); }
+        public async Task Add(BorrowModel newData)
         {
             try
             {
-                _context.Authors.Add(newData);
+                _context.Borrows.Add(newData);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex) { throw; }
@@ -28,17 +28,17 @@ namespace MyPerpus.Repositories.AuthorRepo
         {
             try
             {
-                await _context.Authors.Where(u => u.ID == id).ExecuteDeleteAsync();
+                await _context.Borrows.Where(u => u.ID == id).ExecuteDeleteAsync();
             }
             catch
             { }
         }
 
-        public async Task<List<AuthorModel>> GetAll()
+        public async Task<List<BorrowModel>> GetAll()
         {
             try
             {
-                return await _context.Authors.ToListAsync();
+                return await _context.Borrows.ToListAsync();
             }
             catch
             {
@@ -46,12 +46,13 @@ namespace MyPerpus.Repositories.AuthorRepo
             }
         }
 
-        public async Task<List<AuthorModel>> GetBy(string keyword)
+        public async Task<List<BorrowModel>> GetBy(string keyword)
         {
             try
             {
-                return await _context.Authors.Where(u =>
-                    u.AuthorName.ToLower().Contains(keyword.ToLower())
+                return await _context.Borrows.Where(u =>
+                    u.Borrower.ToLower().Contains(keyword.ToLower()) 
+                   
                     ).ToListAsync();
             }
             catch
@@ -60,11 +61,11 @@ namespace MyPerpus.Repositories.AuthorRepo
             }
         }
 
-        public async Task<AuthorModel> GetById(int id)
+        public async Task<BorrowModel> GetById(int id)
         {
             try
             {
-                return await _context.Authors.FindAsync(id);
+                return await _context.Borrows.FindAsync(id);
             }
             catch
             {
@@ -72,11 +73,11 @@ namespace MyPerpus.Repositories.AuthorRepo
             }
         }
 
-        public async Task Update(AuthorModel updatedData)
+        public async Task Update(BorrowModel updatedData)
         {
             try
             {
-                _context.Authors.Update(updatedData);
+                _context.Borrows.Update(updatedData);
                 await _context.SaveChangesAsync();
             }
             catch

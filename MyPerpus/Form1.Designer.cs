@@ -39,6 +39,9 @@
             Username = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
             isAdmin = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridUser).BeginInit();
             SuspendLayout();
             // 
@@ -79,9 +82,9 @@
             // 
             // buttonNew
             // 
-            buttonNew.Location = new Point(241, 34);
+            buttonNew.Location = new Point(209, 33);
             buttonNew.Name = "buttonNew";
-            buttonNew.Size = new Size(75, 23);
+            buttonNew.Size = new Size(119, 24);
             buttonNew.TabIndex = 5;
             buttonNew.Text = "Save";
             buttonNew.UseVisualStyleBackColor = true;
@@ -116,11 +119,45 @@
             isAdmin.HeaderText = "isAdmin";
             isAdmin.Name = "isAdmin";
             // 
+            // button1
+            // 
+            button1.Location = new Point(241, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 7;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(241, 127);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 8;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(224, 177);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(92, 31);
+            iconButton1.TabIndex = 9;
+            iconButton1.Text = "iconButton1";
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconButton1);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(dataGridUser);
             Controls.Add(buttonNew);
             Controls.Add(textPassword);
@@ -149,5 +186,8 @@
         private DataGridViewTextBoxColumn Username;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn isAdmin;
+        private Button button1;
+        private Button button2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
