@@ -19,7 +19,5 @@ namespace MyPerpus
         {
 
         }
-
-        private void btnSave_Click
     }
 }
