@@ -1,4 +1,6 @@
-﻿namespace MyPerpus.Views
+﻿using FontAwesome.Sharp;
+
+namespace MyPerpus.Views
 {
     partial class Formpeminjam
     {
@@ -30,8 +32,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formpeminjam));
             panel1 = new Panel();
-            panel2 = new Panel();
+            label12 = new Label();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -46,9 +50,12 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
             dataGridView1 = new DataGridView();
-            label12 = new Label();
-            label1 = new Label();
             label11 = new Label();
+            KodePinjam = new DataGridViewTextBoxColumn();
+            KodeBuku = new DataGridViewTextBoxColumn();
+            NIM = new DataGridViewTextBoxColumn();
+            TanggalPinjam = new DataGridViewTextBoxColumn();
+            LamaPinjam = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -66,14 +73,25 @@
             panel1.Size = new Size(800, 100);
             panel1.TabIndex = 0;
             // 
-            // panel2
+            // label12
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 404);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 46);
-            panel2.TabIndex = 1;
+            label12.AutoSize = true;
+            label12.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(148, 48);
+            label12.Name = "label12";
+            label12.Size = new Size(437, 32);
+            label12.TabIndex = 5;
+            label12.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sans Serif Collection", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(139, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(372, 52);
+            label1.TabIndex = 4;
+            label1.Text = "Input Peminjam Buku";
             // 
             // pictureBox1
             // 
@@ -84,6 +102,15 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 404);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 46);
+            panel2.TabIndex = 1;
             // 
             // label2
             // 
@@ -186,6 +213,7 @@
             iconButton1.Size = new Size(65, 64);
             iconButton1.TabIndex = 13;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // label8
             // 
@@ -199,30 +227,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { KodePinjam, KodeBuku, NIM, TanggalPinjam, LamaPinjam });
             dataGridView1.Location = new Point(28, 243);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(706, 150);
+            dataGridView1.Size = new Size(743, 150);
             dataGridView1.TabIndex = 15;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(148, 48);
-            label12.Name = "label12";
-            label12.Size = new Size(437, 32);
-            label12.TabIndex = 5;
-            label12.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sans Serif Collection", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(139, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(372, 52);
-            label1.TabIndex = 4;
-            label1.Text = "Input Peminjam Buku";
             // 
             // label11
             // 
@@ -232,6 +241,32 @@
             label11.Size = new Size(31, 15);
             label11.TabIndex = 23;
             label11.Text = "Save";
+            // 
+            // KodePinjam
+            // 
+            KodePinjam.HeaderText = "KodePinjam";
+            KodePinjam.Name = "KodePinjam";
+            KodePinjam.Width = 300;
+            // 
+            // KodeBuku
+            // 
+            KodeBuku.HeaderText = "KudeBuku";
+            KodeBuku.Name = "KodeBuku";
+            // 
+            // NIM
+            // 
+            NIM.HeaderText = "NIM";
+            NIM.Name = "NIM";
+            // 
+            // TanggalPinjam
+            // 
+            TanggalPinjam.HeaderText = "TanggalPinjam";
+            TanggalPinjam.Name = "TanggalPinjam";
+            // 
+            // LamaPinjam
+            // 
+            LamaPinjam.HeaderText = "LamaPinjam";
+            LamaPinjam.Name = "LamaPinjam";
             // 
             // Formpeminjam
             // 
@@ -287,5 +322,10 @@
         private Label label12;
         private Label label1;
         private Label label11;
+        private DataGridViewTextBoxColumn KodePinjam;
+        private DataGridViewTextBoxColumn KodeBuku;
+        private DataGridViewTextBoxColumn NIM;
+        private DataGridViewTextBoxColumn TanggalPinjam;
+        private DataGridViewTextBoxColumn LamaPinjam;
     }
 }

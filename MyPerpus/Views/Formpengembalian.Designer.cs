@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formpengembalian));
             panel1 = new Panel();
-            panel2 = new Panel();
-            pictureBox1 = new PictureBox();
+            label13 = new Label();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
@@ -43,7 +44,6 @@
             dateTimePicker2 = new DateTimePicker();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
-            label13 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -57,6 +57,14 @@
             label12 = new Label();
             label14 = new Label();
             dataGridView1 = new DataGridView();
+            KodePinjam = new DataGridViewTextBoxColumn();
+            KodeBuku = new DataGridViewTextBoxColumn();
+            NIM = new DataGridViewTextBoxColumn();
+            JatuhTempo = new DataGridViewTextBoxColumn();
+            TanggalPinjam = new DataGridViewTextBoxColumn();
+            LamaPinjam = new DataGridViewTextBoxColumn();
+            TanggalKembali = new DataGridViewTextBoxColumn();
+            TotalDenda = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -71,27 +79,18 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 100);
+            panel1.Size = new Size(1045, 100);
             panel1.TabIndex = 0;
             // 
-            // panel2
+            // label13
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 404);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 46);
-            panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(29, 1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(104, 99);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            label13.AutoSize = true;
+            label13.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(148, 48);
+            label13.Name = "label13";
+            label13.Size = new Size(437, 32);
+            label13.TabIndex = 2;
+            label13.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
             // 
             // label1
             // 
@@ -103,6 +102,25 @@
             label1.TabIndex = 1;
             label1.Text = "Input Pengembalian Buku";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(29, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(104, 99);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 458);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1045, 46);
+            panel2.TabIndex = 1;
+            // 
             // iconButton1
             // 
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
@@ -113,6 +131,7 @@
             iconButton1.Size = new Size(74, 67);
             iconButton1.TabIndex = 13;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // comboBox1
             // 
@@ -177,16 +196,6 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(100, 23);
             textBox6.TabIndex = 22;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(148, 48);
-            label13.Name = "label13";
-            label13.Size = new Size(437, 32);
-            label13.TabIndex = 2;
-            label13.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
             // 
             // label2
             // 
@@ -299,16 +308,57 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { KodePinjam, KodeBuku, NIM, JatuhTempo, TanggalPinjam, LamaPinjam, TanggalKembali, TotalDenda });
             dataGridView1.Location = new Point(29, 314);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(713, 84);
+            dataGridView1.Size = new Size(735, 84);
             dataGridView1.TabIndex = 36;
+            // 
+            // KodePinjam
+            // 
+            KodePinjam.HeaderText = "KodePinjam";
+            KodePinjam.Name = "KodePinjam";
+            // 
+            // KodeBuku
+            // 
+            KodeBuku.HeaderText = "KodeBuku";
+            KodeBuku.Name = "KodeBuku";
+            // 
+            // NIM
+            // 
+            NIM.HeaderText = "NIM";
+            NIM.Name = "NIM";
+            // 
+            // JatuhTempo
+            // 
+            JatuhTempo.HeaderText = "JatuhTempo";
+            JatuhTempo.Name = "JatuhTempo";
+            // 
+            // TanggalPinjam
+            // 
+            TanggalPinjam.HeaderText = "TanggalPinjam";
+            TanggalPinjam.Name = "TanggalPinjam";
+            // 
+            // LamaPinjam
+            // 
+            LamaPinjam.HeaderText = "LamaPinjam";
+            LamaPinjam.Name = "LamaPinjam";
+            // 
+            // TanggalKembali
+            // 
+            TanggalKembali.HeaderText = "TanggalKembali";
+            TanggalKembali.Name = "TanggalKembali";
+            // 
+            // TotalDenda
+            // 
+            TotalDenda.HeaderText = "TotalDenda";
+            TotalDenda.Name = "TotalDenda";
             // 
             // Formpengembalian
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1045, 504);
             Controls.Add(dataGridView1);
             Controls.Add(label14);
             Controls.Add(label12);
@@ -374,5 +424,13 @@
         private Label label12;
         private Label label14;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn KodePinjam;
+        private DataGridViewTextBoxColumn KodeBuku;
+        private DataGridViewTextBoxColumn NIM;
+        private DataGridViewTextBoxColumn JatuhTempo;
+        private DataGridViewTextBoxColumn TanggalPinjam;
+        private DataGridViewTextBoxColumn LamaPinjam;
+        private DataGridViewTextBoxColumn TanggalKembali;
+        private DataGridViewTextBoxColumn TotalDenda;
     }
 }

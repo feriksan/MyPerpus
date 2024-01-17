@@ -11,6 +11,7 @@ namespace MyPerpus.Data
             optionsBuilder.UseSqlServer(_connectionString);
         }
         public DbSet<UserModel> Users => Set<UserModel>();
+        public DbSet<AnggotaModel> Anggotas => Set<AnggotaModel>();
         public DbSet<BookModel> Books => Set<BookModel>();
         public DbSet<BorrowModel> Borrows => Set<BorrowModel>();
         public DbSet<AuthorModel> Authors => Set<AuthorModel>();

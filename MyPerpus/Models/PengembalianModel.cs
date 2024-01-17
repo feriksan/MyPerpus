@@ -11,7 +11,7 @@ namespace MyPerpus.Models
     internal class PengembalianModel
     {
         [Column("KodePinjam")]
-        public string ID {  get; set; }
+        public Guid ID {  get; set; }
         [Column("KodeBuku")]
         public string KodeBuku { get; set; }
         [Column("NIM")]

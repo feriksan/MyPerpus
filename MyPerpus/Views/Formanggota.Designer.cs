@@ -53,6 +53,10 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+            NIM = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            Nama = new DataGridViewTextBoxColumn();
+            Jurusan = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -122,9 +126,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NIM, Username, Nama, Jurusan });
             dataGridView1.Location = new Point(12, 131);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(453, 232);
+            dataGridView1.Size = new Size(443, 232);
             dataGridView1.TabIndex = 3;
             // 
             // label3
@@ -229,6 +234,7 @@
             iconButton1.Size = new Size(57, 50);
             iconButton1.TabIndex = 18;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // iconButton2
             // 
@@ -242,6 +248,7 @@
             iconButton2.Size = new Size(57, 50);
             iconButton2.TabIndex = 19;
             iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
             // 
             // iconButton3
             // 
@@ -255,6 +262,7 @@
             iconButton3.Size = new Size(57, 50);
             iconButton3.TabIndex = 20;
             iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Click += iconButton3_Click;
             // 
             // label10
             // 
@@ -282,6 +290,26 @@
             label12.Size = new Size(31, 15);
             label12.TabIndex = 23;
             label12.Text = "Save";
+            // 
+            // NIM
+            // 
+            NIM.HeaderText = "No";
+            NIM.Name = "NIM";
+            // 
+            // Username
+            // 
+            Username.HeaderText = "NIM";
+            Username.Name = "Username";
+            // 
+            // Nama
+            // 
+            Nama.HeaderText = "Nama";
+            Nama.Name = "Nama";
+            // 
+            // Jurusan
+            // 
+            Jurusan.HeaderText = "Jurusan";
+            Jurusan.Name = "Jurusan";
             // 
             // Formanggota
             // 
@@ -345,5 +373,9 @@
         private Label label10;
         private Label label11;
         private Label label12;
+        private DataGridViewTextBoxColumn NIM;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn Nama;
+        private DataGridViewTextBoxColumn Jurusan;
     }
 }

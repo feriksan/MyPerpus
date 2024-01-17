@@ -13,8 +13,6 @@ namespace MyPerpus.Views
 {
     public partial class FormHome : Form
     {
-        private IconButton? currentMenuButton;
-        private IconButton? currentSubMenuButton;
         private Panel? currentSubMenuPanel;
 
         public FormHome()
@@ -48,25 +46,39 @@ namespace MyPerpus.Views
         private void btnUser_Click(object sender, EventArgs e)
         {
             Formanggota formUser = new Formanggota();
-            formUser.ShowDialog();
+            changePanel(formUser);
+            ActivateButton(sender, panelMaster);
         }
 
         private void btnPeminjam_Click(object sender, EventArgs e)
         {
             Formpeminjam formPeminjam = new Formpeminjam();
-            formPeminjam.ShowDialog();
+            changePanel(formPeminjam);
+            ActivateButton(sender, panelMaster);
         }
 
         private void btnPengembalian_Click(object sender, EventArgs e)
         {
             Formpengembalian formPengembalian = new Formpengembalian();
-            formPengembalian.ShowDialog();
+            changePanel(formPengembalian);
+            ActivateButton(sender, panelMaster);
         }
 
         private void btnBuku_Click(object sender, EventArgs e)
         {
             Formbuku formBuku = new Formbuku();
-            formBuku.ShowDialog();
+            changePanel(formBuku);
+            ActivateButton(sender, panelMaster);
+        }
+
+        private void changePanel(Form form) 
+        {
+            panelMain.Controls.Clear();
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Show();
         }
     }
 }

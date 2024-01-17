@@ -21,5 +21,18 @@ namespace MyPerpus.Views
         {
 
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

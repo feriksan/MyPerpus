@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formbuku));
             panel1 = new Panel();
-            panel2 = new Panel();
-            pictureBox1 = new PictureBox();
+            label12 = new Label();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             label2 = new Label();
             dataGridView1 = new DataGridView();
             label3 = new Label();
@@ -52,7 +53,11 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            label12 = new Label();
+            KodeBuku = new DataGridViewTextBoxColumn();
+            Judul = new DataGridViewTextBoxColumn();
+            Penulis = new DataGridViewTextBoxColumn();
+            Penerbit = new DataGridViewTextBoxColumn();
+            tahun = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -70,14 +75,25 @@
             panel1.Size = new Size(800, 100);
             panel1.TabIndex = 0;
             // 
-            // panel2
+            // label12
             // 
-            panel2.BackColor = SystemColors.ActiveCaption;
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 404);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 46);
-            panel2.TabIndex = 1;
+            label12.AutoSize = true;
+            label12.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(148, 48);
+            label12.Name = "label12";
+            label12.Size = new Size(437, 32);
+            label12.TabIndex = 3;
+            label12.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Sans Serif Collection", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(139, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(524, 52);
+            label1.TabIndex = 1;
+            label1.Text = "Input Data Buku Perpustakaan";
             // 
             // pictureBox1
             // 
@@ -89,15 +105,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // panel2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Sans Serif Collection", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(139, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(524, 52);
-            label1.TabIndex = 1;
-            label1.Text = "Input Data Buku Perpustakaan";
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 404);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 46);
+            panel2.TabIndex = 1;
             // 
             // label2
             // 
@@ -111,6 +126,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { KodeBuku, Judul, Penulis, Penerbit, tahun });
             dataGridView1.Location = new Point(12, 131);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(453, 232);
@@ -222,6 +238,7 @@
             iconButton2.Size = new Size(56, 53);
             iconButton2.TabIndex = 18;
             iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click;
             // 
             // iconButton3
             // 
@@ -234,6 +251,7 @@
             iconButton3.Size = new Size(56, 53);
             iconButton3.TabIndex = 19;
             iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Click += iconButton3_Click;
             // 
             // iconButton1
             // 
@@ -246,6 +264,7 @@
             iconButton1.Size = new Size(56, 53);
             iconButton1.TabIndex = 17;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // label9
             // 
@@ -274,15 +293,30 @@
             label11.TabIndex = 22;
             label11.Text = "Save";
             // 
-            // label12
+            // KodeBuku
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Sans Serif Collection", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(148, 48);
-            label12.Name = "label12";
-            label12.Size = new Size(437, 32);
-            label12.TabIndex = 3;
-            label12.Text = "Institut Teknologi dan Bisnis STIKOM Bali";
+            KodeBuku.HeaderText = "KodeBuku";
+            KodeBuku.Name = "KodeBuku";
+            // 
+            // Judul
+            // 
+            Judul.HeaderText = "Judul";
+            Judul.Name = "Judul";
+            // 
+            // Penulis
+            // 
+            Penulis.HeaderText = "Penulis";
+            Penulis.Name = "Penulis";
+            // 
+            // Penerbit
+            // 
+            Penerbit.HeaderText = "Penerbit";
+            Penerbit.Name = "Penerbit";
+            // 
+            // tahun
+            // 
+            tahun.HeaderText = "Tahun";
+            tahun.Name = "tahun";
             // 
             // Formbuku
             // 
@@ -346,5 +380,10 @@
         private Label label10;
         private Label label11;
         private Label label12;
+        private DataGridViewTextBoxColumn KodeBuku;
+        private DataGridViewTextBoxColumn Judul;
+        private DataGridViewTextBoxColumn Penulis;
+        private DataGridViewTextBoxColumn Penerbit;
+        private DataGridViewTextBoxColumn tahun;
     }
 }

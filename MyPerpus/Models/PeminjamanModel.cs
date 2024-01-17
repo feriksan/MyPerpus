@@ -11,9 +11,9 @@ namespace MyPerpus.Models
     internal class PeminjamanModel
     {
         [Column("KodePinjam")]
-        public string ID { get; set; }
+        public Guid ID { get; set; }
         [Column("KodeBuku")]
-        public string KodeBuku { get; set; }
+        public string KodeBuku { get; set; } = string.Empty;
         [Column("NIM")]
         public int NIM { get; set; }
         [Column("TanggalPinjam")]
