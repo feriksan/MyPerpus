@@ -1,4 +1,8 @@
-﻿using MyPerpus.Models;
+﻿using System.Diagnostics;
+using System.Globalization;
+using Microsoft.Extensions.DependencyInjection;
+using MyPerpus.Models;
+using MyPerpus.Repositories.BookRepo;
 using MyPerpus.Repositories.PengembalianRepo;
 
 namespace MyPerpus.Views
@@ -11,14 +15,44 @@ namespace MyPerpus.Views
         public Formpengembalian()
         {
             InitializeComponent();
+            _repo = Program.ServiceProvider?.GetService<IPengembalianRepo>()!;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private async void Formpengembalian_Load(object sender, EventArgs e)
         {
-
+            await LoadData();
         }
 
-        private async Task LoadDataUsers()
+        private async void iconButton1_Click(object sender, EventArgs e)
+        {
+            await AddData();
+        }
+
+        private async Task AddData()
+        {
+            try
+            {
+                string format = "MM/dd/yyyy hh:mm:ss";
+                IFormatProvider provider = new CultureInfo("fr-FR");
+                var newBook = new PengembalianModel
+                {
+                    ID = Guid.NewGuid(),
+                    KodeBuku = textBoxKodeBuku.Text,
+                    NIM = int.Parse(textBoxNim.Text),
+                    JatuhTempo = DateTime.ParseExact(dateTimePickerJatuhTempo.Text, format, provider),
+                    TanggalPinjam = DateTime.ParseExact(dateTimePickerTanggalPinjam.Text, format, provider),
+                    TanggalKembali = DateTime.ParseExact(dateTimePickerTanggalKembali.Text, format, provider),
+                    LamaPinjam = int.Parse(textBoxLamaPinjam.Text),
+                    Denda = int.Parse(textBoxDenda.Text),
+                    TotalDenda = int.Parse(textBoxTotalDenda.Text),
+                };
+                await _repo.Add(newBook);
+                await LoadData();
+            }
+            catch { throw; }
+        }
+
+        private async Task LoadData()
         {
             try
             {
@@ -45,6 +79,11 @@ namespace MyPerpus.Views
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

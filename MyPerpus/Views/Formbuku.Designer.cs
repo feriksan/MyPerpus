@@ -158,7 +158,6 @@
             label5.Size = new Size(41, 15);
             label5.TabIndex = 6;
             label5.Text = "JUDUL";
-            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -348,6 +347,7 @@
             Text = "Formbuku";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            Load += Formbuku_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.ApplicationServices;
 using MyPerpus.Models;
 using MyPerpus.Repositories.AnggotaRepo;
+using MyPerpus.Repositories.BookRepo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +18,19 @@ namespace MyPerpus.Views
 {
     public partial class Formanggota : Form
     {
-        private readonly IAnggotaRepo _userRepo;
-        private List<AnggotaModel> _users = [];
-        private AnggotaModel? _selecteduser;
+        private readonly IAnggotaRepo _repo;
+        private List<AnggotaModel> _models = [];
+        private AnggotaModel? _selected;
         public Formanggota()
         {
             InitializeComponent();
+            _repo = Program.ServiceProvider?.GetService<IAnggotaRepo>()!;
+        }
+
+        private async void Formangota_Load(object sender, EventArgs e)
+        {
+            Debug.WriteLine("JSAKSK");
+            await LoadData();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -29,9 +38,9 @@ namespace MyPerpus.Views
             Debug.WriteLine("TEst");
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private async void iconButton3_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("TEst");
+            await AddData();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -43,23 +52,40 @@ namespace MyPerpus.Views
         {
             Debug.WriteLine("TEst");
         }
-
-        private async Task LoadDataUsers()
+        private async Task AddData()
         {
             try
             {
-                _users = await _userRepo.GetAll();
+                var newData = new AnggotaModel
+                {
+                    ID = textNIM.Text,
+                    Nama = textNama.Text,
+                    Jurusan = textJurusan.Text,
+                    NoHp = textHp.Text,
+                    Alamat = textAlamat.Text
+                };
+                await _repo.Add(newData);
+                await LoadData();
+            }
+            catch { throw; }
+        }
+
+        private async Task LoadData()
+        {
+            try
+            {
+                _models = await _repo.GetAll();
                 dataGridView1.Rows.Clear();
-                if (_users.Count > 0)
+                if (_models.Count > 0)
                 {
                     // Menambahkan baris sesuai jumlah data
-                    dataGridView1.Rows.Add(_users.Count);
-                    for (int i = 0; i < _users.Count; i++)
+                    dataGridView1.Rows.Add(_models.Count);
+                    for (int i = 0; i < _models.Count; i++)
                     {
                         dataGridView1.Rows[i].Cells[0].Value = i + 1;
-                        dataGridView1.Rows[i].Cells[1].Value = _users[i].ID;
-                        dataGridView1.Rows[i].Cells[2].Value = _users[i].Nama;
-                        dataGridView1.Rows[i].Cells[3].Value = _users[i].Jurusan;
+                        dataGridView1.Rows[i].Cells[1].Value = _models[i].ID;
+                        dataGridView1.Rows[i].Cells[2].Value = _models[i].Nama;
+                        dataGridView1.Rows[i].Cells[3].Value = _models[i].Jurusan;
                     }
                 }
             }

@@ -34,18 +34,15 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            iconButtonSave = new FontAwesome.Sharp.IconButton();
+            textBoxKodeBuku = new TextBox();
+            textBoxNim = new TextBox();
+            textBoxDenda = new TextBox();
+            dateTimePickerTanggalPinjam = new DateTimePicker();
+            dateTimePickerTanggalKembali = new DateTimePicker();
+            textBoxLamaPinjam = new TextBox();
+            textBoxTotalDenda = new TextBox();
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -65,6 +62,7 @@
             LamaPinjam = new DataGridViewTextBoxColumn();
             TanggalKembali = new DataGridViewTextBoxColumn();
             TotalDenda = new DataGridViewTextBoxColumn();
+            dateTimePickerJatuhTempo = new DateTimePicker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -121,81 +119,70 @@
             panel2.Size = new Size(1045, 46);
             panel2.TabIndex = 1;
             // 
-            // iconButton1
+            // iconButtonSave
             // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(690, 177);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(74, 67);
-            iconButton1.TabIndex = 13;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            iconButtonSave.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            iconButtonSave.IconColor = Color.Black;
+            iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSave.Location = new Point(690, 177);
+            iconButtonSave.Name = "iconButtonSave";
+            iconButtonSave.Size = new Size(74, 67);
+            iconButtonSave.TabIndex = 13;
+            iconButtonSave.UseVisualStyleBackColor = true;
+            iconButtonSave.Click += iconButton1_Click;
             // 
-            // comboBox1
+            // textBoxKodeBuku
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(148, 144);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 14;
+            textBoxKodeBuku.Location = new Point(148, 147);
+            textBoxKodeBuku.Name = "textBoxKodeBuku";
+            textBoxKodeBuku.Size = new Size(100, 23);
+            textBoxKodeBuku.TabIndex = 15;
             // 
-            // textBox1
+            // textBoxNim
             // 
-            textBox1.Location = new Point(148, 177);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 15;
+            textBoxNim.Location = new Point(148, 180);
+            textBoxNim.Name = "textBoxNim";
+            textBoxNim.Size = new Size(100, 23);
+            textBoxNim.TabIndex = 16;
             // 
-            // textBox2
+            // textBoxDenda
             // 
-            textBox2.Location = new Point(148, 210);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 16;
+            textBoxDenda.Location = new Point(345, 257);
+            textBoxDenda.Name = "textBoxDenda";
+            textBoxDenda.Size = new Size(100, 23);
+            textBoxDenda.TabIndex = 18;
             // 
-            // textBox3
+            // dateTimePickerTanggalPinjam
             // 
-            textBox3.Location = new Point(148, 257);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 17;
+            dateTimePickerTanggalPinjam.Location = new Point(454, 141);
+            dateTimePickerTanggalPinjam.Name = "dateTimePickerTanggalPinjam";
+            dateTimePickerTanggalPinjam.Size = new Size(200, 23);
+            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalPinjam.TabIndex = 19;
             // 
-            // textBox4
+            // dateTimePickerTanggalKembali
             // 
-            textBox4.Location = new Point(345, 257);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 18;
+            dateTimePickerTanggalKembali.Location = new Point(454, 213);
+            dateTimePickerTanggalKembali.Name = "dateTimePickerTanggalKembali";
+            dateTimePickerTanggalKembali.Size = new Size(200, 23);
+            dateTimePickerTanggalKembali.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTanggalKembali.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalKembali.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // textBoxLamaPinjam
             // 
-            dateTimePicker1.Location = new Point(454, 141);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 19;
+            textBoxLamaPinjam.Location = new Point(148, 221);
+            textBoxLamaPinjam.Name = "textBoxLamaPinjam";
+            textBoxLamaPinjam.Size = new Size(100, 23);
+            textBoxLamaPinjam.TabIndex = 21;
             // 
-            // dateTimePicker2
+            // textBoxTotalDenda
             // 
-            dateTimePicker2.Location = new Point(454, 213);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 20;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(454, 180);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(151, 23);
-            textBox5.TabIndex = 21;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(554, 256);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 22;
+            textBoxTotalDenda.Location = new Point(554, 256);
+            textBoxTotalDenda.Name = "textBoxTotalDenda";
+            textBoxTotalDenda.Size = new Size(100, 23);
+            textBoxTotalDenda.TabIndex = 22;
             // 
             // label2
             // 
@@ -206,19 +193,10 @@
             label2.TabIndex = 24;
             label2.Text = "Input Pengembalian";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(29, 144);
-            label3.Name = "label3";
-            label3.Size = new Size(81, 15);
-            label3.TabIndex = 25;
-            label3.Text = "KODE PINJAM";
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(29, 177);
+            label4.Location = new Point(29, 147);
             label4.Name = "label4";
             label4.Size = new Size(69, 15);
             label4.TabIndex = 26;
@@ -227,7 +205,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(29, 213);
+            label5.Location = new Point(29, 183);
             label5.Name = "label5";
             label5.Size = new Size(30, 15);
             label5.TabIndex = 27;
@@ -236,11 +214,12 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(29, 260);
+            label6.Location = new Point(345, 183);
             label6.Name = "label6";
             label6.Size = new Size(83, 15);
             label6.TabIndex = 28;
             label6.Text = "JATUH TEMPO";
+            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -263,7 +242,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(341, 184);
+            label9.Location = new Point(29, 221);
             label9.Name = "label9";
             label9.Size = new Size(85, 15);
             label9.TabIndex = 31;
@@ -354,11 +333,21 @@
             TotalDenda.HeaderText = "TotalDenda";
             TotalDenda.Name = "TotalDenda";
             // 
+            // dateTimePickerJatuhTempo
+            // 
+            dateTimePickerJatuhTempo.Location = new Point(454, 177);
+            dateTimePickerJatuhTempo.Name = "dateTimePickerJatuhTempo";
+            dateTimePickerJatuhTempo.Size = new Size(191, 23);
+            dateTimePickerJatuhTempo.Format = DateTimePickerFormat.Custom;
+            dateTimePickerJatuhTempo.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerJatuhTempo.TabIndex = 37;
+            // 
             // Formpengembalian
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 504);
+            Controls.Add(dateTimePickerJatuhTempo);
             Controls.Add(dataGridView1);
             Controls.Add(label14);
             Controls.Add(label12);
@@ -370,24 +359,22 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(iconButton1);
+            Controls.Add(textBoxTotalDenda);
+            Controls.Add(textBoxLamaPinjam);
+            Controls.Add(dateTimePickerTanggalKembali);
+            Controls.Add(dateTimePickerTanggalPinjam);
+            Controls.Add(textBoxDenda);
+            Controls.Add(textBoxNim);
+            Controls.Add(textBoxKodeBuku);
+            Controls.Add(iconButtonSave);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Formpengembalian";
             Text = "Formpengembalian";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            Load += Formpengembalian_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -400,19 +387,16 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private FontAwesome.Sharp.IconButton iconButtonSave;
+        private TextBox textBoxKodeBuku;
+        private TextBox textBoxNim;
+        private TextBox textBoxDenda;
+        private DateTimePicker dateTimePickerTanggalPinjam;
+        private DateTimePicker dateTimePickerTanggalKembali;
+        private TextBox textBoxLamaPinjam;
+        private TextBox textBoxTotalDenda;
         private Label label13;
         private Label label2;
-        private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -432,5 +416,6 @@
         private DataGridViewTextBoxColumn LamaPinjam;
         private DataGridViewTextBoxColumn TanggalKembali;
         private DataGridViewTextBoxColumn TotalDenda;
+        private DateTimePicker dateTimePickerJatuhTempo;
     }
 }

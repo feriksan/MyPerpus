@@ -36,27 +36,27 @@
             panel2 = new Panel();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            NIM = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            Nama = new DataGridViewTextBoxColumn();
+            Jurusan = new DataGridViewTextBoxColumn();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            textNIM = new TextBox();
+            textNama = new TextBox();
+            textAlamat = new TextBox();
+            textJurusan = new TextBox();
+            textHp = new TextBox();
             label8 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            iconEdit = new FontAwesome.Sharp.IconButton();
+            iconSave = new FontAwesome.Sharp.IconButton();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
-            NIM = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            Nama = new DataGridViewTextBoxColumn();
-            Jurusan = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -132,6 +132,26 @@
             dataGridView1.Size = new Size(443, 232);
             dataGridView1.TabIndex = 3;
             // 
+            // NIM
+            // 
+            NIM.HeaderText = "No";
+            NIM.Name = "NIM";
+            // 
+            // Username
+            // 
+            Username.HeaderText = "NIM";
+            Username.Name = "Username";
+            // 
+            // Nama
+            // 
+            Nama.HeaderText = "Nama";
+            Nama.Name = "Nama";
+            // 
+            // Jurusan
+            // 
+            Jurusan.HeaderText = "Jurusan";
+            Jurusan.Name = "Jurusan";
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -178,40 +198,40 @@
             label7.TabIndex = 8;
             label7.Text = "NO. HP";
             // 
-            // textBox1
+            // textNIM
             // 
-            textBox1.Location = new Point(566, 146);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(179, 23);
-            textBox1.TabIndex = 9;
+            textNIM.Location = new Point(566, 146);
+            textNIM.Name = "textNIM";
+            textNIM.Size = new Size(179, 23);
+            textNIM.TabIndex = 9;
             // 
-            // textBox2
+            // textNama
             // 
-            textBox2.Location = new Point(566, 176);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(179, 23);
-            textBox2.TabIndex = 10;
+            textNama.Location = new Point(566, 176);
+            textNama.Name = "textNama";
+            textNama.Size = new Size(179, 23);
+            textNama.TabIndex = 10;
             // 
-            // textBox3
+            // textAlamat
             // 
-            textBox3.Location = new Point(566, 263);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(179, 23);
-            textBox3.TabIndex = 11;
+            textAlamat.Location = new Point(566, 263);
+            textAlamat.Name = "textAlamat";
+            textAlamat.Size = new Size(179, 23);
+            textAlamat.TabIndex = 11;
             // 
-            // textBox4
+            // textJurusan
             // 
-            textBox4.Location = new Point(566, 205);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(179, 23);
-            textBox4.TabIndex = 12;
+            textJurusan.Location = new Point(566, 205);
+            textJurusan.Name = "textJurusan";
+            textJurusan.Size = new Size(179, 23);
+            textJurusan.TabIndex = 12;
             // 
-            // textBox5
+            // textHp
             // 
-            textBox5.Location = new Point(566, 234);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(179, 23);
-            textBox5.TabIndex = 13;
+            textHp.Location = new Point(566, 234);
+            textHp.Name = "textHp";
+            textHp.Size = new Size(179, 23);
+            textHp.TabIndex = 13;
             // 
             // label8
             // 
@@ -236,33 +256,33 @@
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
             // 
-            // iconButton2
+            // iconEdit
             // 
-            iconButton2.BackgroundImageLayout = ImageLayout.None;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(582, 308);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(57, 50);
-            iconButton2.TabIndex = 19;
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += iconButton2_Click;
+            iconEdit.BackgroundImageLayout = ImageLayout.None;
+            iconEdit.FlatStyle = FlatStyle.Flat;
+            iconEdit.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            iconEdit.IconColor = Color.Black;
+            iconEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconEdit.Location = new Point(582, 308);
+            iconEdit.Name = "iconEdit";
+            iconEdit.Size = new Size(57, 50);
+            iconEdit.TabIndex = 19;
+            iconEdit.UseVisualStyleBackColor = true;
+            iconEdit.Click += iconButton2_Click;
             // 
-            // iconButton3
+            // iconSave
             // 
-            iconButton3.BackgroundImageLayout = ImageLayout.None;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.Location = new Point(674, 309);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(57, 50);
-            iconButton3.TabIndex = 20;
-            iconButton3.UseVisualStyleBackColor = true;
-            iconButton3.Click += iconButton3_Click;
+            iconSave.BackgroundImageLayout = ImageLayout.None;
+            iconSave.FlatStyle = FlatStyle.Flat;
+            iconSave.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            iconSave.IconColor = Color.Black;
+            iconSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSave.Location = new Point(674, 309);
+            iconSave.Name = "iconSave";
+            iconSave.Size = new Size(57, 50);
+            iconSave.TabIndex = 20;
+            iconSave.UseVisualStyleBackColor = true;
+            iconSave.Click += iconButton3_Click;
             // 
             // label10
             // 
@@ -291,26 +311,6 @@
             label12.TabIndex = 23;
             label12.Text = "Save";
             // 
-            // NIM
-            // 
-            NIM.HeaderText = "No";
-            NIM.Name = "NIM";
-            // 
-            // Username
-            // 
-            Username.HeaderText = "NIM";
-            Username.Name = "Username";
-            // 
-            // Nama
-            // 
-            Nama.HeaderText = "Nama";
-            Nama.Name = "Nama";
-            // 
-            // Jurusan
-            // 
-            Jurusan.HeaderText = "Jurusan";
-            Jurusan.Name = "Jurusan";
-            // 
             // Formanggota
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -319,15 +319,15 @@
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
-            Controls.Add(iconButton3);
-            Controls.Add(iconButton2);
+            Controls.Add(iconSave);
+            Controls.Add(iconEdit);
             Controls.Add(iconButton1);
             Controls.Add(label8);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textHp);
+            Controls.Add(textJurusan);
+            Controls.Add(textAlamat);
+            Controls.Add(textNama);
+            Controls.Add(textNIM);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -339,6 +339,7 @@
             Controls.Add(panel1);
             Name = "Formanggota";
             Text = "dataanggota";
+            Load += Formangota_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -360,15 +361,15 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox textNIM;
+        private TextBox textNama;
+        private TextBox textAlamat;
+        private TextBox textJurusan;
+        private TextBox textHp;
         private Label label8;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconEdit;
+        private FontAwesome.Sharp.IconButton iconSave;
         private Label label9;
         private Label label10;
         private Label label11;

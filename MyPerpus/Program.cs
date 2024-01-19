@@ -1,6 +1,10 @@
 using Microsoft.Extensions.DependencyInjection;
+using MyPerpus.Repositories.BookRepo;
 using MyPerpus.Repositories.UserRepo;
+using MyPerpus.Repositories.AnggotaRepo;
 using MyPerpus.Views;
+using MyPerpus.Repositories.PeminjamanRepo;
+using MyPerpus.Repositories.PengembalianRepo;
 
 namespace MyPerpus
 {
@@ -17,6 +21,10 @@ namespace MyPerpus
             ApplicationConfiguration.Initialize();
             ServiceProvider = new ServiceCollection()
                 .AddScoped<IUserRepo, DbUserRepo>()
+                .AddScoped<IBookRepo, DbBookRepo>()
+                .AddScoped<IAnggotaRepo, DbAnggotaRepo>()
+                .AddScoped<IPeminjamanRepo, DbPeminjamanRepo>()
+                .AddScoped<IPengembalianRepo, DbPengembalianRepo>()
                 .BuildServiceProvider() ;
             Application.Run(new FormHome());
         }

@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace MyPerpus.Views
 {
@@ -39,23 +40,21 @@ namespace MyPerpus.Views
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimePickerTanggalPinjam = new DateTimePicker();
             label6 = new Label();
             label7 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButtonSave = new IconButton();
             label8 = new Label();
             dataGridView1 = new DataGridView();
-            label11 = new Label();
             KodePinjam = new DataGridViewTextBoxColumn();
             KodeBuku = new DataGridViewTextBoxColumn();
             NIM = new DataGridViewTextBoxColumn();
             TanggalPinjam = new DataGridViewTextBoxColumn();
             LamaPinjam = new DataGridViewTextBoxColumn();
+            label11 = new Label();
+            textBoxLamaPinjam = new TextBox();
+            textBoxKodeBuku = new TextBox();
+            textBoxNim = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -124,7 +123,7 @@ namespace MyPerpus.Views
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(29, 202);
+            label3.Location = new Point(27, 178);
             label3.Name = "label3";
             label3.Size = new Size(30, 15);
             label3.TabIndex = 3;
@@ -133,57 +132,20 @@ namespace MyPerpus.Views
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(28, 170);
+            label4.Location = new Point(26, 146);
             label4.Name = "label4";
             label4.Size = new Size(69, 15);
             label4.TabIndex = 4;
             label4.Text = "KODE BUKU";
             // 
-            // label5
+            // dateTimePickerTanggalPinjam
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(28, 136);
-            label5.Name = "label5";
-            label5.Size = new Size(81, 15);
-            label5.TabIndex = 5;
-            label5.Text = "KODE PINJAM";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(141, 164);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 6;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(141, 199);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(141, 133);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 8;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(453, 133);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 9;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(453, 170);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 10;
+            dateTimePickerTanggalPinjam.Location = new Point(453, 133);
+            dateTimePickerTanggalPinjam.Name = "dateTimePickerTanggalPinjam";
+            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalPinjam.Size = new Size(200, 23);
+            dateTimePickerTanggalPinjam.TabIndex = 9;
             // 
             // label6
             // 
@@ -203,17 +165,17 @@ namespace MyPerpus.Views
             label7.TabIndex = 12;
             label7.Text = "TANGGAL PINJAM";
             // 
-            // iconButton1
+            // iconButtonSave
             // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(694, 133);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(65, 64);
-            iconButton1.TabIndex = 13;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            iconButtonSave.IconChar = IconChar.FileEdit;
+            iconButtonSave.IconColor = Color.Black;
+            iconButtonSave.IconFont = IconFont.Auto;
+            iconButtonSave.Location = new Point(694, 133);
+            iconButtonSave.Name = "iconButtonSave";
+            iconButtonSave.Size = new Size(65, 64);
+            iconButtonSave.TabIndex = 13;
+            iconButtonSave.UseVisualStyleBackColor = true;
+            iconButtonSave.Click += iconButton1_Click;
             // 
             // label8
             // 
@@ -232,15 +194,6 @@ namespace MyPerpus.Views
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(743, 150);
             dataGridView1.TabIndex = 15;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(707, 198);
-            label11.Name = "label11";
-            label11.Size = new Size(31, 15);
-            label11.TabIndex = 23;
-            label11.Text = "Save";
             // 
             // KodePinjam
             // 
@@ -268,23 +221,51 @@ namespace MyPerpus.Views
             LamaPinjam.HeaderText = "LamaPinjam";
             LamaPinjam.Name = "LamaPinjam";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(707, 198);
+            label11.Name = "label11";
+            label11.Size = new Size(31, 15);
+            label11.TabIndex = 23;
+            label11.Text = "Save";
+            // 
+            // textBoxLamaPinjam
+            // 
+            textBoxLamaPinjam.Location = new Point(453, 170);
+            textBoxLamaPinjam.Name = "textBoxLamaPinjam";
+            textBoxLamaPinjam.Size = new Size(200, 23);
+            textBoxLamaPinjam.TabIndex = 24;
+            // 
+            // textBoxKodeBuku
+            // 
+            textBoxKodeBuku.Location = new Point(139, 143);
+            textBoxKodeBuku.Name = "textBoxKodeBuku";
+            textBoxKodeBuku.Size = new Size(121, 23);
+            textBoxKodeBuku.TabIndex = 25;
+            // 
+            // textBoxNim
+            // 
+            textBoxNim.Location = new Point(139, 175);
+            textBoxNim.Name = "textBoxNim";
+            textBoxNim.Size = new Size(121, 23);
+            textBoxNim.TabIndex = 26;
+            // 
             // Formpeminjam
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBoxNim);
+            Controls.Add(textBoxKodeBuku);
+            Controls.Add(textBoxLamaPinjam);
             Controls.Add(label11);
             Controls.Add(dataGridView1);
             Controls.Add(label8);
-            Controls.Add(iconButton1);
+            Controls.Add(iconButtonSave);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label5);
+            Controls.Add(dateTimePickerTanggalPinjam);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -294,6 +275,7 @@ namespace MyPerpus.Views
             Text = "Formpeminjam";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            Load += Formpeminjaman_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -308,15 +290,11 @@ namespace MyPerpus.Views
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePickerTanggalPinjam;
+        private DateTimePicker dateTimePickerLamaPinjam;
         private Label label6;
         private Label label7;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonSave;
         private Label label8;
         private DataGridView dataGridView1;
         private Label label12;
@@ -327,5 +305,8 @@ namespace MyPerpus.Views
         private DataGridViewTextBoxColumn NIM;
         private DataGridViewTextBoxColumn TanggalPinjam;
         private DataGridViewTextBoxColumn LamaPinjam;
+        private TextBox textBoxLamaPinjam;
+        private TextBox textBoxKodeBuku;
+        private TextBox textBoxNim;
     }
 }
