@@ -36,7 +36,16 @@ namespace MyPerpus.Views
         {
             await AddData();
         }
-
+        private void KodeBukuClick(object sender, EventArgs e)
+        {
+            var formPopup = new PopUpBook(this);
+            formPopup.Show(this);
+        }
+        public string KodeBukuChange
+        {
+            get { return textBoxKodeBuku.Text; }
+            set { textBoxKodeBuku.Text = value; }
+        }
         private async Task AddData()
         {
             try

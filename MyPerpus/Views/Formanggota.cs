@@ -67,7 +67,7 @@ namespace MyPerpus.Views
             }
             else if (e.ColumnIndex == 7)
             {
-                await DeleteData(Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["NIM"].Value));
+                await DeleteData(Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["Username"].Value));
             }
         }
 

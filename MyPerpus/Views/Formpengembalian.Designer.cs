@@ -154,20 +154,20 @@
             // 
             // dateTimePickerTanggalPinjam
             // 
+            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
             dateTimePickerTanggalPinjam.Location = new Point(454, 141);
             dateTimePickerTanggalPinjam.Name = "dateTimePickerTanggalPinjam";
             dateTimePickerTanggalPinjam.Size = new Size(200, 23);
-            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
-            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             dateTimePickerTanggalPinjam.TabIndex = 19;
             // 
             // dateTimePickerTanggalKembali
             // 
+            dateTimePickerTanggalKembali.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalKembali.Format = DateTimePickerFormat.Custom;
             dateTimePickerTanggalKembali.Location = new Point(454, 213);
             dateTimePickerTanggalKembali.Name = "dateTimePickerTanggalKembali";
             dateTimePickerTanggalKembali.Size = new Size(200, 23);
-            dateTimePickerTanggalKembali.Format = DateTimePickerFormat.Custom;
-            dateTimePickerTanggalKembali.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             dateTimePickerTanggalKembali.TabIndex = 20;
             // 
             // textBoxLamaPinjam
@@ -198,9 +198,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(29, 147);
             label4.Name = "label4";
-            label4.Size = new Size(69, 15);
+            label4.Size = new Size(115, 15);
             label4.TabIndex = 26;
-            label4.Text = "KODE BUKU";
+            label4.Text = "KODE PEMINJAMAN";
             // 
             // label5
             // 
@@ -335,11 +335,11 @@
             // 
             // dateTimePickerJatuhTempo
             // 
+            dateTimePickerJatuhTempo.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerJatuhTempo.Format = DateTimePickerFormat.Custom;
             dateTimePickerJatuhTempo.Location = new Point(454, 177);
             dateTimePickerJatuhTempo.Name = "dateTimePickerJatuhTempo";
             dateTimePickerJatuhTempo.Size = new Size(191, 23);
-            dateTimePickerJatuhTempo.Format = DateTimePickerFormat.Custom;
-            dateTimePickerJatuhTempo.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             dateTimePickerJatuhTempo.TabIndex = 37;
             // 
             // Formpengembalian
@@ -372,9 +372,9 @@
             Controls.Add(panel1);
             Name = "Formpengembalian";
             Text = "Formpengembalian";
+            Load += Formpengembalian_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            Load += Formpengembalian_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

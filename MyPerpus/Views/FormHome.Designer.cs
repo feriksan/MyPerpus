@@ -254,7 +254,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.shopping_bag;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(57, 49);
@@ -332,7 +332,7 @@
             // 
             // panelMain
             // 
-            panelMain.BackColor = Color.MediumOrchid;
+            panelMain.BackColor = Color.MediumBlue;
             panelMain.Controls.Add(statusStripMain);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(200, 50);

@@ -46,15 +46,15 @@ namespace MyPerpus.Views
             iconButtonSave = new IconButton();
             label8 = new Label();
             dataGridView1 = new DataGridView();
+            label11 = new Label();
+            textBoxLamaPinjam = new TextBox();
+            textBoxKodeBuku = new TextBox();
+            textBoxNim = new TextBox();
             KodePinjam = new DataGridViewTextBoxColumn();
             KodeBuku = new DataGridViewTextBoxColumn();
             NIM = new DataGridViewTextBoxColumn();
             TanggalPinjam = new DataGridViewTextBoxColumn();
             LamaPinjam = new DataGridViewTextBoxColumn();
-            label11 = new Label();
-            textBoxLamaPinjam = new TextBox();
-            textBoxKodeBuku = new TextBox();
-            textBoxNim = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -140,10 +140,10 @@ namespace MyPerpus.Views
             // 
             // dateTimePickerTanggalPinjam
             // 
+            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
             dateTimePickerTanggalPinjam.Location = new Point(453, 133);
             dateTimePickerTanggalPinjam.Name = "dateTimePickerTanggalPinjam";
-            dateTimePickerTanggalPinjam.Format = DateTimePickerFormat.Custom;
-            dateTimePickerTanggalPinjam.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             dateTimePickerTanggalPinjam.Size = new Size(200, 23);
             dateTimePickerTanggalPinjam.TabIndex = 9;
             // 
@@ -192,34 +192,8 @@ namespace MyPerpus.Views
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { KodePinjam, KodeBuku, NIM, TanggalPinjam, LamaPinjam });
             dataGridView1.Location = new Point(28, 243);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(743, 150);
+            dataGridView1.Size = new Size(545, 150);
             dataGridView1.TabIndex = 15;
-            // 
-            // KodePinjam
-            // 
-            KodePinjam.HeaderText = "KodePinjam";
-            KodePinjam.Name = "KodePinjam";
-            KodePinjam.Width = 300;
-            // 
-            // KodeBuku
-            // 
-            KodeBuku.HeaderText = "KudeBuku";
-            KodeBuku.Name = "KodeBuku";
-            // 
-            // NIM
-            // 
-            NIM.HeaderText = "NIM";
-            NIM.Name = "NIM";
-            // 
-            // TanggalPinjam
-            // 
-            TanggalPinjam.HeaderText = "TanggalPinjam";
-            TanggalPinjam.Name = "TanggalPinjam";
-            // 
-            // LamaPinjam
-            // 
-            LamaPinjam.HeaderText = "LamaPinjam";
-            LamaPinjam.Name = "LamaPinjam";
             // 
             // label11
             // 
@@ -241,8 +215,10 @@ namespace MyPerpus.Views
             // 
             textBoxKodeBuku.Location = new Point(139, 143);
             textBoxKodeBuku.Name = "textBoxKodeBuku";
+            textBoxKodeBuku.ReadOnly = true;
             textBoxKodeBuku.Size = new Size(121, 23);
             textBoxKodeBuku.TabIndex = 25;
+            textBoxKodeBuku.Click += KodeBukuClick;
             // 
             // textBoxNim
             // 
@@ -250,6 +226,31 @@ namespace MyPerpus.Views
             textBoxNim.Name = "textBoxNim";
             textBoxNim.Size = new Size(121, 23);
             textBoxNim.TabIndex = 26;
+            // 
+            // KodePinjam
+            // 
+            KodePinjam.HeaderText = "KodePinjam";
+            KodePinjam.Name = "KodePinjam";
+            // 
+            // KodeBuku
+            // 
+            KodeBuku.HeaderText = "KudeBuku";
+            KodeBuku.Name = "KodeBuku";
+            // 
+            // NIM
+            // 
+            NIM.HeaderText = "NIM";
+            NIM.Name = "NIM";
+            // 
+            // TanggalPinjam
+            // 
+            TanggalPinjam.HeaderText = "TanggalPinjam";
+            TanggalPinjam.Name = "TanggalPinjam";
+            // 
+            // LamaPinjam
+            // 
+            LamaPinjam.HeaderText = "LamaPinjam";
+            LamaPinjam.Name = "LamaPinjam";
             // 
             // Formpeminjam
             // 
@@ -273,9 +274,9 @@ namespace MyPerpus.Views
             Controls.Add(panel1);
             Name = "Formpeminjam";
             Text = "Formpeminjam";
+            Load += Formpeminjaman_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            Load += Formpeminjaman_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
