@@ -77,7 +77,17 @@ namespace MyPerpus.Repositories.BookRepo
         {
             try
             {
-                _context.Books.Update(updatedData);
+                var book = _context.Books.Single(b => b.ID == updatedData.ID);
+                _context.Books.Where(b => b.ID == updatedData.ID)
+                              .ExecuteUpdate(setters => setters
+                              .SetProperty(b => b.Judul, updatedData.Judul)
+                              .SetProperty(b => b.Penulis, updatedData.Penulis)
+                              .SetProperty(b => b.Penerbit, updatedData.Penerbit)
+                              .SetProperty(b => b.Tahun, updatedData.Tahun));
+                book.Judul = updatedData.Judul;
+                book.Penulis = updatedData.Penulis;
+                book.Penerbit = updatedData.Penerbit;
+                book.Tahun = updatedData.Tahun;
                 await _context.SaveChangesAsync();
             }
             catch

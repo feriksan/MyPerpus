@@ -165,7 +165,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAJOiwACTosBwHnSJwAADixJREFUeF7tmQl0VNUZ
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAJOiQACTokBv4cRrgAADixJREFUeF7tmQl0VNUZ
         x6+IS0E22TIBqq1VoB5PFRAjYVPUirIItvZ4PLaly2lra622irsQlrAGSCQEQjKsWmWH7HvCkMUkEEIg
         IYEEIZCQTPZ1JpB///dlcQiTMZRA3sE75/zOC5OX+773/d5373cfAoAYtGmRI/qSF8h6cpicJ0WkkBRc
         E35uBYO3uBc4B/sUOMcYC5wj/QqcIzbeqhQ7h/teJOnOIRv8DUE+M3nf/QwH1gpDIAkg+7yE065VwrDX
@@ -229,6 +229,21 @@
         pyErVlaurGB78esNAOJ/4tr1a/DL76wAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="KodeBuku.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Judul.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Penulis.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Penerbit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tahun.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="KodeBuku.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

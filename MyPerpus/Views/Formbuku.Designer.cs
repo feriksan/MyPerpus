@@ -1,4 +1,5 @@
-﻿namespace MyPerpus.Views
+﻿
+namespace MyPerpus.Views
 {
     partial class Formbuku
     {
@@ -36,28 +37,28 @@
             panel2 = new Panel();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            KodeBuku = new DataGridViewTextBoxColumn();
+            Judul = new DataGridViewTextBoxColumn();
+            Penulis = new DataGridViewTextBoxColumn();
+            Penerbit = new DataGridViewTextBoxColumn();
+            tahun = new DataGridViewTextBoxColumn();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            textBoxJudul = new TextBox();
+            textBoxKodeBuku = new TextBox();
+            textBoxPenulis = new TextBox();
+            textBoxPenerbit = new TextBox();
+            textBoxTahun = new TextBox();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            KodeBuku = new DataGridViewTextBoxColumn();
-            Judul = new DataGridViewTextBoxColumn();
-            Penulis = new DataGridViewTextBoxColumn();
-            Penerbit = new DataGridViewTextBoxColumn();
-            tahun = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -131,6 +132,32 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(453, 232);
             dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // KodeBuku
+            // 
+            KodeBuku.HeaderText = "KodeBuku";
+            KodeBuku.Name = "KodeBuku";
+            // 
+            // Judul
+            // 
+            Judul.HeaderText = "Judul";
+            Judul.Name = "Judul";
+            // 
+            // Penulis
+            // 
+            Penulis.HeaderText = "Penulis";
+            Penulis.Name = "Penulis";
+            // 
+            // Penerbit
+            // 
+            Penerbit.HeaderText = "Penerbit";
+            Penerbit.Name = "Penerbit";
+            // 
+            // tahun
+            // 
+            tahun.HeaderText = "Tahun";
+            tahun.Name = "tahun";
             // 
             // label3
             // 
@@ -186,45 +213,47 @@
             label8.TabIndex = 9;
             label8.Text = "TAHUN";
             // 
-            // textBox1
+            // textBoxJudul
             // 
-            textBox1.Location = new Point(568, 173);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 31);
-            textBox1.TabIndex = 11;
+            textBoxJudul.Location = new Point(568, 173);
+            textBoxJudul.Multiline = true;
+            textBoxJudul.Name = "textBoxJudul";
+            textBoxJudul.Size = new Size(201, 31);
+            textBoxJudul.TabIndex = 11;
             // 
-            // textBox2
+            // textBoxKodeBuku
             // 
-            textBox2.Location = new Point(568, 136);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(201, 31);
-            textBox2.TabIndex = 12;
+            textBoxKodeBuku.Enabled = false;
+            textBoxKodeBuku.Location = new Point(568, 136);
+            textBoxKodeBuku.Multiline = true;
+            textBoxKodeBuku.Name = "textBoxKodeBuku";
+            textBoxKodeBuku.ReadOnly = true;
+            textBoxKodeBuku.Size = new Size(201, 31);
+            textBoxKodeBuku.TabIndex = 12;
             // 
-            // textBox3
+            // textBoxPenulis
             // 
-            textBox3.Location = new Point(568, 210);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(201, 31);
-            textBox3.TabIndex = 13;
+            textBoxPenulis.Location = new Point(568, 210);
+            textBoxPenulis.Multiline = true;
+            textBoxPenulis.Name = "textBoxPenulis";
+            textBoxPenulis.Size = new Size(201, 31);
+            textBoxPenulis.TabIndex = 13;
             // 
-            // textBox4
+            // textBoxPenerbit
             // 
-            textBox4.Location = new Point(568, 245);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(201, 31);
-            textBox4.TabIndex = 14;
+            textBoxPenerbit.Location = new Point(568, 245);
+            textBoxPenerbit.Multiline = true;
+            textBoxPenerbit.Name = "textBoxPenerbit";
+            textBoxPenerbit.Size = new Size(201, 31);
+            textBoxPenerbit.TabIndex = 14;
             // 
-            // textBox5
+            // textBoxTahun
             // 
-            textBox5.Location = new Point(568, 282);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(201, 31);
-            textBox5.TabIndex = 15;
+            textBoxTahun.Location = new Point(568, 282);
+            textBoxTahun.Multiline = true;
+            textBoxTahun.Name = "textBoxTahun";
+            textBoxTahun.Size = new Size(201, 31);
+            textBoxTahun.TabIndex = 15;
             // 
             // iconButton2
             // 
@@ -292,31 +321,6 @@
             label11.TabIndex = 22;
             label11.Text = "Save";
             // 
-            // KodeBuku
-            // 
-            KodeBuku.HeaderText = "KodeBuku";
-            KodeBuku.Name = "KodeBuku";
-            // 
-            // Judul
-            // 
-            Judul.HeaderText = "Judul";
-            Judul.Name = "Judul";
-            // 
-            // Penulis
-            // 
-            Penulis.HeaderText = "Penulis";
-            Penulis.Name = "Penulis";
-            // 
-            // Penerbit
-            // 
-            Penerbit.HeaderText = "Penerbit";
-            Penerbit.Name = "Penerbit";
-            // 
-            // tahun
-            // 
-            tahun.HeaderText = "Tahun";
-            tahun.Name = "tahun";
-            // 
             // Formbuku
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -328,11 +332,11 @@
             Controls.Add(iconButton3);
             Controls.Add(iconButton2);
             Controls.Add(iconButton1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxTahun);
+            Controls.Add(textBoxPenerbit);
+            Controls.Add(textBoxPenulis);
+            Controls.Add(textBoxKodeBuku);
+            Controls.Add(textBoxJudul);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -345,9 +349,9 @@
             Controls.Add(panel1);
             Name = "Formbuku";
             Text = "Formbuku";
+            Load += Formbuku_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            Load += Formbuku_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -368,11 +372,11 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox textBoxJudul;
+        private TextBox textBoxKodeBuku;
+        private TextBox textBoxPenulis;
+        private TextBox textBoxPenerbit;
+        private TextBox textBoxTahun;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton1;

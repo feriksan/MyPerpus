@@ -36,10 +36,6 @@
             panel2 = new Panel();
             label2 = new Label();
             dataGridView1 = new DataGridView();
-            NIM = new DataGridViewTextBoxColumn();
-            Username = new DataGridViewTextBoxColumn();
-            Nama = new DataGridViewTextBoxColumn();
-            Jurusan = new DataGridViewTextBoxColumn();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -57,6 +53,12 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+            NIM = new DataGridViewTextBoxColumn();
+            Username = new DataGridViewTextBoxColumn();
+            Nama = new DataGridViewTextBoxColumn();
+            NoHP = new DataGridViewTextBoxColumn();
+            Alamat = new DataGridViewTextBoxColumn();
+            Jurusan = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -126,31 +128,12 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NIM, Username, Nama, Jurusan });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NIM, Username, Nama, NoHP, Alamat, Jurusan });
             dataGridView1.Location = new Point(12, 131);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(443, 232);
             dataGridView1.TabIndex = 3;
-            // 
-            // NIM
-            // 
-            NIM.HeaderText = "No";
-            NIM.Name = "NIM";
-            // 
-            // Username
-            // 
-            Username.HeaderText = "NIM";
-            Username.Name = "Username";
-            // 
-            // Nama
-            // 
-            Nama.HeaderText = "Nama";
-            Nama.Name = "Nama";
-            // 
-            // Jurusan
-            // 
-            Jurusan.HeaderText = "Jurusan";
-            Jurusan.Name = "Jurusan";
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label3
             // 
@@ -311,6 +294,36 @@
             label12.TabIndex = 23;
             label12.Text = "Save";
             // 
+            // NIM
+            // 
+            NIM.HeaderText = "No";
+            NIM.Name = "NIM";
+            // 
+            // Username
+            // 
+            Username.HeaderText = "NIM";
+            Username.Name = "Username";
+            // 
+            // Nama
+            // 
+            Nama.HeaderText = "Nama";
+            Nama.Name = "Nama";
+            // 
+            // NoHP
+            // 
+            NoHP.HeaderText = "NoHP";
+            NoHP.Name = "NoHP";
+            // 
+            // Alamat
+            // 
+            Alamat.HeaderText = "Alamat";
+            Alamat.Name = "Alamat";
+            // 
+            // Jurusan
+            // 
+            Jurusan.HeaderText = "Jurusan";
+            Jurusan.Name = "Jurusan";
+            // 
             // Formanggota
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -377,6 +390,8 @@
         private DataGridViewTextBoxColumn NIM;
         private DataGridViewTextBoxColumn Username;
         private DataGridViewTextBoxColumn Nama;
+        private DataGridViewTextBoxColumn NoHP;
+        private DataGridViewTextBoxColumn Alamat;
         private DataGridViewTextBoxColumn Jurusan;
     }
 }

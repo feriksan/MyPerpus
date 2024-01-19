@@ -77,7 +77,15 @@ namespace MyPerpus.Repositories.AnggotaRepo
         {
             try
             {
-                _context.Anggotas.Update(updatedData);
+                var anggota = _context.Anggotas.Single(b => b.ID == updatedData.ID);
+                _context.Anggotas.Where(b => b.ID == updatedData.ID)
+                              .ExecuteUpdate(setters => setters
+                              .SetProperty(b => b.Nama, updatedData.Nama)
+                              .SetProperty(b => b.Jurusan, updatedData.Jurusan)
+                              .SetProperty(b => b.Alamat, updatedData.Alamat));
+                anggota.Nama = updatedData.Nama;
+                anggota.Jurusan = updatedData.Jurusan;
+                anggota.Alamat = updatedData.Alamat;
                 await _context.SaveChangesAsync();
             }
             catch
