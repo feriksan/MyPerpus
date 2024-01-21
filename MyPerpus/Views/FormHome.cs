@@ -71,7 +71,7 @@ namespace MyPerpus.Views
             ActivateButton(sender, panelMaster);
         }
 
-        private void changePanel(Form form) 
+        private void changePanel(Form form)
         {
             panelMain.Controls.Clear();
             form.TopLevel = false;
@@ -79,6 +79,26 @@ namespace MyPerpus.Views
             panelMain.Controls.Add(form);
             form.FormBorderStyle = FormBorderStyle.None;
             form.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAppName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripUserActive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
