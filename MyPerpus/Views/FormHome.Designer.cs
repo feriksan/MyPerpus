@@ -61,7 +61,7 @@
             // panelLeftSide
             // 
             panelLeftSide.AutoScroll = true;
-            panelLeftSide.BackColor = Color.DarkViolet;
+            panelLeftSide.BackColor = Color.MidnightBlue;
             panelLeftSide.Controls.Add(btnSetting);
             panelLeftSide.Controls.Add(panelMaster);
             panelLeftSide.Controls.Add(btnMaster);
@@ -261,6 +261,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // labelAppName
             // 
@@ -269,13 +270,14 @@
             labelAppName.ForeColor = SystemColors.ControlLightLight;
             labelAppName.Location = new Point(75, 21);
             labelAppName.Name = "labelAppName";
-            labelAppName.Size = new Size(85, 29);
+            labelAppName.Size = new Size(115, 29);
             labelAppName.TabIndex = 1;
-            labelAppName.Text = "MyPOS";
+            labelAppName.Text = "MyPerpus";
+            labelAppName.Click += labelAppName_Click;
             // 
             // panelTopSide
             // 
-            panelTopSide.BackColor = Color.DarkViolet;
+            panelTopSide.BackColor = Color.MidnightBlue;
             panelTopSide.Controls.Add(btnLogout);
             panelTopSide.Controls.Add(labelActiveModule);
             panelTopSide.Controls.Add(iconActiveModule);
@@ -332,7 +334,7 @@
             // 
             // panelMain
             // 
-            panelMain.BackColor = Color.MediumBlue;
+            panelMain.BackColor = Color.LightCyan;
             panelMain.Controls.Add(statusStripMain);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(200, 50);
@@ -358,8 +360,9 @@
             // 
             toolStripUserActive.BackColor = SystemColors.Control;
             toolStripUserActive.Name = "toolStripUserActive";
-            toolStripUserActive.Size = new Size(115, 17);
-            toolStripUserActive.Text = "User Active: Jepriana";
+            toolStripUserActive.Size = new Size(112, 17);
+            toolStripUserActive.Text = "User Active: Clarissa";
+            toolStripUserActive.Click += toolStripUserActive_Click;
             // 
             // FormHome
             // 
@@ -372,8 +375,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormHome";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MyPOS";
+            Text = "MyPerpus";
             WindowState = FormWindowState.Maximized;
+            Load += FormHome_Load;
             panelLeftSide.ResumeLayout(false);
             panelMaster.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
